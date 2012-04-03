@@ -2,11 +2,11 @@
 
 class Field
 {
-    private $name = "";
-    protected $widget=null;
-    private $default=null;
-    private $required=false;
-    private $label;
+    private     $name = "";
+    protected   $widget=null;
+    private     $default=null;
+    private     $required=false;
+    private     $label;
 
     public function draw()
     {
@@ -182,7 +182,6 @@ class SocialMediaField extends CompositeField
         $this->name = $name;
         $this->widget->name = $base_name . '[' . $this->name . ']';
         $this->widget->id = "id_" . $this->name;
-    }
     }
 
     public function value($value)

@@ -14,6 +14,7 @@ class Theme_Options extends AdminPanel
         $section->dribbble = new CharField('Dribbble URL');
         $section->vimeo = new CharField('Vimeo URL');
         $section->etsy = new CharField('Etsy URL');
+        $section->socialmedia = new SocialMediaField('Social Media', 'social_media');
     }
     private function social_media_xml()
     {

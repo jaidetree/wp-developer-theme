@@ -186,22 +186,40 @@ class SocialMediaField extends CompositeField
 
     public function value($value)
     {
-        $value = split(",", $value);
+        $value = explode(",", $this->set_value($value));
         foreach( $this->widget as $idx=>$field )
         {
             $field->value( $value[$idx] );
         }
     }
 
-    public function set_value()
+    public function set_value($value)
     {
-    }
+        if( ! isset($value) && ! is_null( $this->default ) )
+        {
+            $value = $this->default;
+        }
 
-    public function sanitize()
-    {
+        return $value;
     }
 
     public function get_value()
     {
+        $value = array();
+        foreach($this->widget as $field)
+        {
+            $value[] = $field->get_value();    
+        }
+
+        return implode(",", $value);
     }
+
+    public function sanitize($data)
+    {
+        
+        echo "<pre>";
+        print_r( $data );
+        die( );
+    }
+
 }

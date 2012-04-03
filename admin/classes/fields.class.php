@@ -157,7 +157,7 @@ class CompositeField extends Field
 class SocialMediaField extends CompositeField
 {
     protected $base_name;
-
+http://soundcloud.com/talkin2wallz/orange-828
     public function __construct($label, $name, $default=null, $required=false)
     {
         parent::__construct(array(
@@ -220,6 +220,17 @@ class SocialMediaField extends CompositeField
         echo "<pre>";
         print_r( $data );
         die( );
+    }
+
+    public function render()
+    {
+        $html = array();
+        foreach( $this->widget as $field )
+        {
+            $html[] = $field->render();
+        }
+
+        return implode("\n", $html);
     }
 
 }

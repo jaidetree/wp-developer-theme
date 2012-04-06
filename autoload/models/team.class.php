@@ -120,7 +120,7 @@ class TeamMember
 
     public function get_post_class($class)
     {
-        if( $i % 3 === 0 && $i > 0 )
+        if( $this->index % 3 === 0 && $this->index > 0 )
         {
             return ' ' . $class;
         }

@@ -146,9 +146,10 @@ class CompositeField extends Field
     {
         $this->widget = array();
 
+
         foreach($fields as $field)
         {
-            $field->name = $field->get_name();
+            $field->name = 'test';
             $this->widget[] = $field;
         }    
     }
@@ -157,13 +158,13 @@ class CompositeField extends Field
 class SocialMediaField extends CompositeField
 {
     protected $base_name;
-http://soundcloud.com/talkin2wallz/orange-828
+
     public function __construct($label, $name, $default=null, $required=false)
     {
         parent::__construct(array(
-            CharField('Name', null, false, array( 'name' => $name . '_name' )),
-            CharField('Profile URL', null, false, array( 'name' => $name . '_url' ),
-            CharField('Icon URL', null, false, array( 'name' => $name . '_icon' )),
+            new CharField('Name', null, false, array( 'name' => $name . '_name' )),
+            new CharField('Profile URL', null, false, array( 'name' => $name . '_url' )),
+            new CharField('Icon URL', null, false, array( 'name' => $name . '_icon' ))
         ), $default, $required);
 
         foreach( $this->widget as $field )
@@ -180,8 +181,11 @@ http://soundcloud.com/talkin2wallz/orange-828
         }
 
         $this->name = $name;
-        $this->widget->name = $base_name . '[' . $this->name . ']';
-        $this->widget->id = "id_" . $this->name;
+        foreach( $this->widget as $field )
+        {
+            $field->widget->name = $base_name . '[' . $this->name . ']';
+            $field->widget->id = "id_" . $this->name;
+        }
     }
 
     public function value($value)

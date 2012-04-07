@@ -29,7 +29,7 @@ class JZ_THEME
 
     public function start()
     {
-        JZ_THEME::init()->load_directory( dirname(__FILE__) . '/..' );
+        JZ_THEME::init()->load_directory( THEME_LIB_DIR . 'autoload/' );
 
         if( is_admin() )
         {

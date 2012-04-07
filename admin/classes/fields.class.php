@@ -77,7 +77,7 @@ class Field
 
     public function value($value=null)
     {
-        $this->widget->value = $this->set_value(value);
+        $this->widget->value = $this->set_value($value);
         return true;
     }
 

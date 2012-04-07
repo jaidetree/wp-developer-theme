@@ -58,8 +58,14 @@ class TeamBox extends MetaBox
         ),
 		array( 
 			'name' => 'dribbble', 
-			'type'=> 'text', 
+			'type' => 'text', 
 			'label' => 'Dribbble URL:', 
+            'help' => 'Leave blank if none'
+        ),
+        array(
+            'name' => 'vimeo',
+            'type' => 'text',
+            'label' => 'Vimeo URL:',
             'help' => 'Leave blank if none'
         ),
     );

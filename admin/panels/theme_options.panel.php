@@ -9,12 +9,11 @@ class Theme_Options extends AdminPanel
     {
         $this->sections()->social_media = new SettingsSection('Social Media', 'general');
         $section = &$this->sections()->social_media->fields();
-        $section->twitter = new CharField('Twitter URL');
-        $section->facebook = new CharField('Facebook URL');
-        $section->dribbble = new CharField('Dribbble URL');
-        $section->vimeo = new CharField('Vimeo URL');
-        $section->etsy = new CharField('Etsy URL');
-        $section->socialmedia = new SocialMediaField('Social Media', 'social_media');
+        $section->twitter = new CharField('Twitter URL', '');
+        $section->facebook = new CharField('Facebook URL', '');
+        $section->dribbble = new CharField('Dribbble URL', '');
+        $section->vimeo = new CharField('Vimeo URL', '');
+        $section->etsy = new CharField('Etsy URL', '');
     }
     private function social_media_xml()
     {

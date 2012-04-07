@@ -62,8 +62,6 @@ abstract class AdminPanel
 	        $this->options = get_option( $this->db_name );
         }
 
-        print_r( $this->options );
-
         return $this->options;
     }
 

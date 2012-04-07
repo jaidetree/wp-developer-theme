@@ -25,7 +25,7 @@ class JZUtils
         $posts = query_posts($atts);
         wp_reset_query();
 
-        return $posts[0]->post_content;
+        return do_shortcode($posts[0]->post_content);
     }
 
 }
